@@ -76,7 +76,7 @@
   --blur-opacity: 0.5;
   --blur-radius-dark: 10px;
   --blur-opacity-dark: 0.5;
-  --font-family-sans-serif: "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
+  --font-family-sans-serif: "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --font-family-normal: Open Sans, PingFangSC-Regular, Microsoft Yahei, WenQuanYi Micro Hei, "Helvetica Neue", Helvetica, Hiragino Sans GB, sans-serif;
 }
@@ -119,7 +119,7 @@
   --blur-opacity: 0.5;
   --blur-radius-dark: 10px;
   --blur-opacity-dark: 0.5;
-  --font-family-sans-serif: "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
+  --font-family-sans-serif: "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --font-family-normal: Open Sans, PingFangSC-Regular, Microsoft Yahei, WenQuanYi Micro Hei, "Helvetica Neue", Helvetica, Hiragino Sans GB, sans-serif;
 }
@@ -129,7 +129,7 @@ body {
   padding: 0px;
   height: 100%;
   font-size: 16px;
-  font-family: "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
+  font-family: "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
   font-family: var(--font-family-sans-serif);
 }
 html {
@@ -295,7 +295,6 @@ li {
 .login-page .login-container .login-form .brand .brand-text {
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: "TypoGraphica";
 }
 .login-page .login-container .login-form .brand:hover {
   text-decoration: none;
@@ -481,7 +480,6 @@ header .fill .container .brand {
   font-size: 1.5rem;
   color: #fff;
   color: var(--white);
-  font-family: "TypoGraphica";
   text-decoration: none;
   padding-left: 1rem;
   cursor: default;
@@ -563,7 +561,7 @@ footer a {
   font-size: 1.8rem;
   color: #5e72e4;
   color: var(--primary);
-  font-family: "TypoGraphica", sans-serif;
+  font-family: sans-serif;
   text-decoration: none;
   padding-left: 0;
   cursor: default;
