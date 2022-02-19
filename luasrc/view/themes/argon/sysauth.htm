@@ -69,15 +69,6 @@
 	bgs,bgcount=fetchMedia("/www" .. theme_dir .. "*")
 %>
 <div class="login-page">
-	
-	<%
-	local bg_url = media .. "/img/bg1.jpg"
-	if ( bing_background == "0" ) then
-		if bgcount > 0 then
-			currentBg =  bgs[math.random(1,bgcount)]
-		end
-		if ( bgcount > 0 and currentBg.type == "mp4" ) then
-	%>
 	<div class="video">
 		<video autoplay loop muted id="video">
 			<source src="<%=currentBg.url%>" type="video/mp4">
@@ -95,24 +86,6 @@
 			}
 		})
 	</script>
-	<%  elseif ( bgcount > 0 and currentBg["type"] ~= "mp4") then
-			bg_url = currentBg.url
-		end
-	else
-		local bing = "123"
-		local sys = require "luci.sys"
-		local json = require "luci.jsonc"
-		local remote_bg_url="http://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US"
-		--bing = sys.httpget(remote_bg_url)
-		bing = sys.exec("wget --timeout=0.5 -qO- '%s'" %remote_bg_url)
-		if (bing and bing ~= '') then
-			bg_url = "https://www.bing.com" .. json.parse(bing).images[1].url
-		end
-	end
-	%>
-	<% if(currentBg["type"] ~= "mp4") then %>
-	<div class="main-bg" id="main-bg" style="background-image:url(<%=bg_url%>)"></div>
-	<% end %>
 	<div class="login-container">
 		<div class="login-form">
 			<a class="brand" href="/"><img src="<%=media%>/img/argon.svg" class="icon"><span
