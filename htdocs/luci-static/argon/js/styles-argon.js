@@ -45,7 +45,6 @@
 // define what element should be observed by the observer
 // and what types of mutations trigger the callback
     const observer = new MutationObserver(() => {
-    console.log("callback that runs when observer is triggered");
     });
     if ($("#cbi-dhcp-lan-ignore").length > 0) {
         observer.observe(document.getElementById("cbi-dhcp-lan-ignore"), {

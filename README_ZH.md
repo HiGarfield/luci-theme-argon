@@ -108,9 +108,6 @@ opkg install luci-i18n-argon-config*.ipk
 
 ## 屏幕截图
 
-![desktop](/Screenshots/screenshot_pc.jpg)
-![mobile](/Screenshots/screenshot_phone.jpg)
-
 ## 贡献者
 
 <a href="https://github.com/jerrykuku/luci-theme-argon/graphs/contributors">

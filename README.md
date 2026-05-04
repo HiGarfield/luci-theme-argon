@@ -105,9 +105,6 @@ opkg install luci-app-argon-config*.ipk
 
 ## Screenshots
 
-![desktop](/Screenshots/screenshot_pc.jpg)
-![mobile](/Screenshots/screenshot_phone.jpg)
-
 ## Contributors
 
 <a href="https://github.com/jerrykuku/luci-theme-argon/graphs/contributors">
