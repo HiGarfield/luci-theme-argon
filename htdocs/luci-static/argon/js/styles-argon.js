@@ -42,17 +42,6 @@
         return text.replace(/[ \t\n\r]+/g, " ");
     }
 
-// define what element should be observed by the observer
-// and what types of mutations trigger the callback
-    const observer = new MutationObserver(() => {
-    });
-    if ($("#cbi-dhcp-lan-ignore").length > 0) {
-        observer.observe(document.getElementById("cbi-dhcp-lan-ignore"), {
-            subtree: true,
-            attributes: true
-        });
-    }
-
     $(".cbi-button-up").val("");
     $(".cbi-button-down").val("");
 
