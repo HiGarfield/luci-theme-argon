@@ -51,19 +51,13 @@
 	math.randomseed(tonumber(tostring(os.time()):reverse():sub(1, 9)))
 
 	-- Custom settings
-	local mode = 'normal'
-	local dark_css = fs.readfile('/www/luci-static/argon/css/dark.css')
 	local bar_color = '#5e72e4'
-	local primary, dark_primary, blur_radius, blur_radius_dark, blur_opacity
+	local primary, blur_radius, blur_opacity
 	if fs.access('/etc/config/argon') then
 		primary = uci:get_first('argon', 'global', 'primary')
-		dark_primary = uci:get_first('argon', 'global', 'dark_primary')
 		blur_radius = uci:get_first('argon', 'global', 'blur')
-		blur_radius_dark = uci:get_first('argon', 'global', 'blur_dark')
 		blur_opacity = uci:get_first('argon', 'global', 'transparency')
-		blur_opacity_dark = uci:get_first('argon', 'global', 'transparency_dark')
-		mode = uci:get_first('argon', 'global', 'mode')
-		bar_color = mode == 'dark' and dark_primary or primary
+		bar_color = primary or '#5e72e4'
 	end
 -%>
 <!DOCTYPE html>
@@ -99,21 +93,11 @@
     <meta name="theme-color" content="<%=bar_color%>">
     <link rel="stylesheet" href="<%=media%>/css/cascade.css<%# ?v=PKG_VERSION %>">
     <style title="text/css">
-        <% if mode == 'normal' then %>
-            @media (prefers-color-scheme: dark) {
-                <%=dark_css%>
-            }
-        <% elseif mode == 'dark' then %>
-            <%=dark_css%>
-        <% end -%>
         <% if fs.access('/etc/config/argon') then %>
         :root {
             --primary: <%=primary%>;
-            --dark-primary: <%=dark_primary%>;
             --blur-radius:<%=blur_radius%>px;
             --blur-opacity:<%=blur_opacity%>;
-            --blur-radius-dark:<%=blur_radius_dark%>px;
-            --blur-opacity-dark:<%=blur_opacity_dark%>;
         }
         <% end -%>
     </style>
