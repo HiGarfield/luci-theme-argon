@@ -76,9 +76,9 @@
   --blur-opacity: 0.5;
   --blur-radius-dark: 10px;
   --blur-opacity-dark: 0.5;
-  --font-family-sans-serif: "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
+  --font-family-sans-serif: "Microsoft Yahei", "WenQuanYi Micro Hei", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --font-family-normal: Open Sans, PingFangSC-Regular, Microsoft Yahei, WenQuanYi Micro Hei, "Helvetica Neue", Helvetica, Hiragino Sans GB, sans-serif;
+  --font-family-normal: PingFangSC-Regular, Microsoft Yahei, WenQuanYi Micro Hei, "Helvetica Neue", Helvetica, Hiragino Sans GB, sans-serif;
 }
 [data-theme="dark"] {
   --primary: #483d8b;
@@ -119,9 +119,9 @@
   --blur-opacity: 0.5;
   --blur-radius-dark: 10px;
   --blur-opacity-dark: 0.5;
-  --font-family-sans-serif: "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
+  --font-family-sans-serif: "Microsoft Yahei", "WenQuanYi Micro Hei", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --font-family-normal: Open Sans, PingFangSC-Regular, Microsoft Yahei, WenQuanYi Micro Hei, "Helvetica Neue", Helvetica, Hiragino Sans GB, sans-serif;
+  --font-family-normal: PingFangSC-Regular, Microsoft Yahei, WenQuanYi Micro Hei, "Helvetica Neue", Helvetica, Hiragino Sans GB, sans-serif;
 }
 html,
 body {
@@ -129,7 +129,7 @@ body {
   padding: 0px;
   height: 100%;
   font-size: 16px;
-  font-family: "Google Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans-serif", "Helvetica Neue", "Helvetica", "Hiragino Sans GB";
+  font-family: "Microsoft Yahei", "WenQuanYi Micro Hei", "Helvetica Neue", "Helvetica", "Hiragino Sans GB", sans-serif;
   font-family: var(--font-family-sans-serif);
 }
 html {
@@ -320,7 +320,7 @@ li {
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 85px;
-  font-family: "TypoGraphica";
+  font-family: sans-serif;
   width: 420px;
   padding: 0 0.5rem 0.1rem 0.5rem;
   text-align: center;
@@ -519,7 +519,7 @@ header .fill .container .brand {
   font-size: 1.5rem;
   color: #fff;
   color: var(--white);
-  font-family: "TypoGraphica";
+  font-family: sans-serif;
   text-decoration: none;
   padding-left: 1rem;
   cursor: default;
@@ -597,7 +597,7 @@ footer a {
   font-size: 1.8rem;
   color: #5e72e4;
   color: var(--primary);
-  font-family: "TypoGraphica", sans-serif;
+  font-family: sans-serif;
   text-decoration: none;
   padding-left: 0;
   cursor: default;
