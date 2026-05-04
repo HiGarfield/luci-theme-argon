@@ -188,19 +188,13 @@
 	math.randomseed(os.time())
 
 	-- Custom settings
-	local mode = 'normal'
-	local dark_css = fs.readfile('/www/luci-static/argon/css/dark.css')
 	local bar_color = '#5e72e4'
-	local primary, dark_primary, blur_radius, blur_radius_dark, blur_opacity
+	local primary, blur_radius, blur_opacity
 	if fs.access('/etc/config/argon') then
 		primary = uci:get_first('argon', 'global', 'primary')
-		dark_primary = uci:get_first('argon', 'global', 'dark_primary')
 		blur_radius = uci:get_first('argon', 'global', 'blur')
-		blur_radius_dark = uci:get_first('argon', 'global', 'blur_dark')
 		blur_opacity = uci:get_first('argon', 'global', 'transparency')
-		blur_opacity_dark = uci:get_first('argon', 'global', 'transparency_dark')
-		mode = uci:get_first('argon', 'global', 'mode')
-		bar_color = mode == 'dark' and dark_primary or primary
+		bar_color = primary
 	end
 	
 	
@@ -238,25 +232,15 @@
 	<meta name="msapplication-TileImage" content="<%=media%>/icon/ms-icon-144x144.png">
 	<meta name="theme-color" content="<%=bar_color%>">
 	<link rel="stylesheet" href="<%=media%>/css/cascade.css<%# ?v=PKG_VERSION %>">
-	<style title="text/css">
-	<% if mode == 'normal' then %>
-		@media (prefers-color-scheme: dark) {
-			<%=dark_css%>
-		}
-	<% elseif mode == 'dark' then %>
-		<%=dark_css%>
-	<% end -%>
 	<% if fs.access('/etc/config/argon') then %>
+	<style title="text/css">
 	:root {
 		--primary: <%=primary%>;
-		--dark-primary: <%=dark_primary%>;
 		--blur-radius:<%=blur_radius%>px;
 		--blur-opacity:<%=blur_opacity%>;
-		--blur-radius-dark:<%=blur_radius_dark%>px;
-		--blur-opacity-dark:<%=blur_opacity_dark%>;
 	}
-	<% end -%>
 	</style>
+	<% end -%>
 	<link rel="shortcut icon" href="<%=media%>/favicon.ico">
 	<% if node and node.css then %>
 	<link rel="stylesheet" href="<%=resource%>/<%=node.css%>">
@@ -271,7 +255,7 @@
 </head>
 
 <body
-	class="<%- if node then %><%= striptags( node.title ) %><%- end %> <% if luci.dispatcher.context.authsession then %>logged-in<% end %> lang_<%=luci.i18n.context.lang%> <%=mode %>  ">
+	class="<%- if node then %><%= striptags( node.title ) %><%- end %> <% if luci.dispatcher.context.authsession then %>logged-in<% end %> lang_<%=luci.i18n.context.lang%>">
 
 	<div class="main">
 		<div class="main-left">

@@ -36,8 +36,7 @@
 ### • 该分支只适配 [Lean's LEDE ( LuCI 18.06 )][lede] / [OpenWrt LuCI 18.06][official-luci-18.06] •
   
 Argon 是**一款干净整洁的 OpenWrt LuCI 主题**，  
-允许用户使用图片或视频自定义其登录界面。  
-它还支持在浅色模式和深色模式之间自动或手动切换。
+允许用户使用图片或视频自定义其登录界面。
 
 [![license][license-badge]][license]
 [![prs][prs-badge]][prs]
@@ -51,7 +50,6 @@ Argon 是**一款干净整洁的 OpenWrt LuCI 主题**，
 
 [特色](#特色) •
 [快速开始](#快速开始) •
-[屏幕截图](#屏幕截图) •
 [贡献者](#贡献者) •
 [鸣谢](#鸣谢)
 
@@ -65,7 +63,6 @@ Argon 是**一款干净整洁的 OpenWrt LuCI 主题**，
 - 可自定义主题颜色。
 - 支持使用 Bing 图片作为登录背景。
 - 支持自定义上传图片或视频作为登录背景。
-- 通过系统自动在明暗模式之间切换，也可设置为固定模式。
 - 带有扩展功能的设置插件 [luci-app-argon-config][config-link]
 
 ## 注意
@@ -105,8 +102,6 @@ wget --no-check-certificate https://github.com/jerrykuku/luci-theme-argon/releas
 opkg install luci-app-argon-config*.ipk
 opkg install luci-i18n-argon-config*.ipk
 ```
-
-## 屏幕截图
 
 ## 贡献者
 

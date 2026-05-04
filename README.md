@@ -36,8 +36,7 @@
 ### • This branch only matches [Lean's LEDE ( LuCI 18.06 )][lede] / [OpenWrt LuCI 18.06][official-luci-18.06] •
   
 Argon is **a clean and tidy OpenWrt LuCI theme** that allows<br/>
-users to customize their login interface with images or videos.  
-It also supports automatic and manual switching between light and dark modes.
+users to customize their login interface with images or videos.
 
 [![license][license-badge]][license]
 [![prs][prs-badge]][prs]
@@ -51,7 +50,6 @@ It also supports automatic and manual switching between light and dark modes.
 
 [Key Features](#key-features) •
 [Getting started](#getting-started) •
-[Screenshots](#screenshots) •
 [Contributors](#contributors) •
 [Credits](#credits)
 
@@ -65,7 +63,6 @@ It also supports automatic and manual switching between light and dark modes.
 - Customizable theme colors.
 - Support for using Bing images as login background.
 - Support for custom uploading of images or videos as login background.
-- Automatically switch between light 和 dark modes with the system, 和 can also be set to a fixed mode.
 - Settings plugin with extensions [luci-app-argon-config][config-link]
 
 ## Notice
@@ -102,8 +99,6 @@ opkg install luci-theme-argon*.ipk
 wget --no-check-certificate https://github.com/jerrykuku/luci-theme-argon/releases/download/v1.8.3/luci-app-argon-config_0.9-20220424_all.ipk
 opkg install luci-app-argon-config*.ipk
 ```
-
-## Screenshots
 
 ## Contributors
 
