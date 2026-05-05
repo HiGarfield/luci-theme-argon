@@ -6,7 +6,7 @@
 /*
  *  Get hex for the [Light mode] Primary Color ,then reduce it to 25% transparency and convert it to RGBA value
  */
-	const hexColor_primary_light = getComputedStyle(document.documentElement).getPropertyValue('--primary').replace(/\s/, "");
+	const hexColor_primary_light = getComputedStyle(document.documentElement).getPropertyValue('--primary').replace(/\s+/g, "");
 	const hexToRgba_primary_light = (hex) => {
   		const r = parseInt(hex.substring(1, 3), 16);
   		const g = parseInt(hex.substring(3, 5), 16);

@@ -146,7 +146,7 @@
 					write('</li>')
 				else
 					local title = pcdata(striptags(translate(nnode.title)))
-                                        local en_title = pcdata(striptags(nnode.title))
+                                        local en_title = pcdata(striptags(string.gsub(nnode.title," ","_")))
 					write('<li  class="slide"><a  class="menu exit" data-title="%s" href="%s">%s</a></li>' %{
 						en_title,
 						nodeurl(category, r, nnode.query),
@@ -201,7 +201,6 @@
 	<meta name="x5-page-mode" content="app">
 	<meta name="browsermode" content="application">
 	<meta name="msapplication-tap-highlight" content="no">
-	<meta name="msapplication-TileColor" content="#5e72e4">
 
 	<meta name="application-name" content="<%=striptags( (boardinfo.hostname or "?") ) %> - LuCI">
 	<meta name="apple-mobile-web-app-title" content="<%=striptags( (boardinfo.hostname or "?") ) %> - LuCI">
