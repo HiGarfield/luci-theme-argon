@@ -16,16 +16,15 @@
 		}
 		return /^#[0-9a-fA-F]{6}$/.test(value) ? value : null;
 	};
+	const defaultHexColor_primary_light = "#5e72e4";
 	const hexColor_primary_light = normalizeHexColor_primary_light(
 		getComputedStyle(document.documentElement).getPropertyValue('--primary')
 	);
 	const hexToRgba_primary_light = (hex) => {
-		if (!hex) {
-			return [94, 114, 228, 0.15];
-		}
-  		const r = parseInt(hex.substring(1, 3), 16);
-  		const g = parseInt(hex.substring(3, 5), 16);
-  		const b = parseInt(hex.substring(5, 7), 16);
+		const safeHex = hex || defaultHexColor_primary_light;
+  		const r = parseInt(safeHex.substring(1, 3), 16);
+  		const g = parseInt(safeHex.substring(3, 5), 16);
+  		const b = parseInt(safeHex.substring(5, 7), 16);
   		const a = 0.15;
   		return [r, g, b, a];
 	};

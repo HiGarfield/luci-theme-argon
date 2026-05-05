@@ -54,15 +54,17 @@
         if (onclick == undefined || onclick == "") {
             that.click(function () {
                 var href = that.attr("href");
-                var normalizedHref = typeof href === "string" ? href.trim().toLowerCase() : "";
+                var normalizedHref = typeof href === "string" ? href.trim() : "";
                 var compactHref = normalizedHref.replace(/\s+/g, "");
+                var schemeMatch = compactHref.match(/^([a-z][a-z0-9+.-]*):/i);
+                var scheme = schemeMatch ? schemeMatch[1].toLowerCase() : "";
                 if (compactHref !== "" &&
                     compactHref.indexOf("#") === -1 &&
-                    compactHref.indexOf("javascript:") !== 0 &&
-                    compactHref.indexOf("vbscript:") !== 0 &&
-                    compactHref.indexOf("data:") !== 0 &&
-                    compactHref.indexOf("mailto:") !== 0 &&
-                    compactHref.indexOf("tel:") !== 0) {
+                    scheme !== "javascript" &&
+                    scheme !== "vbscript" &&
+                    scheme !== "data" &&
+                    scheme !== "mailto" &&
+                    scheme !== "tel") {
                     $(".main > .loading").fadeIn("fast");
                     return true;
                 }
