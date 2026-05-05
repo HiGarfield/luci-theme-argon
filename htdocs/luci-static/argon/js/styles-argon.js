@@ -54,7 +54,7 @@
         if (onclick == undefined || onclick == "") {
             that.click(function () {
                 var href = that.attr("href");
-                if (href.indexOf("#") == -1) {
+                if (href && href.indexOf("#") == -1) {
                     $(".main > .loading").fadeIn("fast");
                     return true;
                 }
