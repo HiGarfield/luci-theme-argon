@@ -55,8 +55,7 @@
             that.click(function () {
                 var href = that.attr("href");
                 var normalizedHref = typeof href === "string" ? href.trim().toLowerCase() : "";
-                if (typeof href === "string" &&
-                    normalizedHref !== "" &&
+                if (normalizedHref !== "" &&
                     normalizedHref.indexOf("#") !== 0 &&
                     normalizedHref.indexOf("javascript:") !== 0 &&
                     normalizedHref.indexOf("vbscript:") !== 0 &&
