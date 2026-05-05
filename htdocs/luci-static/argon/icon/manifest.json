@@ -2,9 +2,9 @@
  "name": "Openwrt",
  "icons": [
   {
-   "src": "..\/img\/argon.svg",
+   "src": "../img/argon.svg",
    "sizes": "any",
-   "type": "image\/svg+xml"
+   "type": "image/svg+xml"
   }
  ]
 }
