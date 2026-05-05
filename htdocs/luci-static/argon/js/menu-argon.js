@@ -19,7 +19,7 @@
  *      https://github.com/LuttyYang/luci-theme-material/
  *
  *  Argon Theme
- *	    https://demos.creative-tim.com/argon-dashboard/index.html
+ *      https://demos.creative-tim.com/argon-dashboard/index.html
  *
  *  Login background
  *      https://unsplash.com/
@@ -27,20 +27,21 @@
  *  Licensed to the public under the Apache License 2.0
  */
 
-    var lastNode = undefined;
-    var mainNodeName = undefined;
+(function ($) {
+    let lastNode = null;
+    let mainNodeName = null;
 
-    var nodeUrl = "";
+    let nodeUrl = "";
     (function (node) {
-        var pathNodes = [];
-        if (node[0] == "admin") {
+        let pathNodes = [];
+        if (node[0] === "admin") {
             pathNodes = [node[1], node[2]];
         } else {
             pathNodes = Array.isArray(node) ? node : [];
         }
         luciLocation = pathNodes;
 
-        for (var i = 0; i < pathNodes.length; i++) {
+        for (let i = 0; i < pathNodes.length; i++) {
             nodeUrl += pathNodes[i];
             if (i !== pathNodes.length - 1) {
                 nodeUrl += "/";
@@ -53,21 +54,21 @@
      * @returns {boolean} success?
      */
     function getCurrentNodeByUrl() {
-        var ret = false;
+        let ret = false;
         const escapedNodeUrl = nodeUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         const urlReg = new RegExp(escapedNodeUrl + "$");
-        if (!$('body').hasClass('logged-in')) {
+        if (!$("body").hasClass("logged-in")) {
             luciLocation = ["Main", "Login"];
             return true;
         }
         $(".main > .main-left > .nav > .slide > .active").next(".slide-menu").stop(true).slideUp("fast");
         $(".main > .main-left > .nav > .slide > .menu").removeClass("active");
         $(".main > .main-left > .nav > .slide > .menu").each(function () {
-            var ulNode = $(this);
+            const ulNode = $(this);
 
             ulNode.next().find("a").each(function () {
-                var that = $(this);
-                var href = that.attr("href");
+                const that = $(this);
+                const href = that.attr("href");
 
                 if (urlReg.test(href)) {
                     ulNode.click();
@@ -86,8 +87,8 @@
      * menu click
      */
     $(".main > .main-left > .nav > .slide > .menu").click(function () {
-        var ul = $(this).next(".slide-menu");
-        var menu = $(this);
+        const ul = $(this).next(".slide-menu");
+        const menu = $(this);
         if (!menu.hasClass("exit")) {
             $(".main > .main-left > .nav > .slide > .active").next(".slide-menu").stop(true).slideUp("fast");
             $(".main > .main-left > .nav > .slide > .menu").removeClass("active");
@@ -104,15 +105,15 @@
 
             return false;
         }
-
     });
 
     /**
      * hook menu click and add the hash
      */
     $(".main > .main-left > .nav > .slide > .slide-menu > li > a").click(function () {
-        if (lastNode != undefined)
+        if (lastNode !== null) {
             lastNode.removeClass("active");
+        }
         $(this).parent().addClass("active");
         $(".main > .loading").fadeIn("fast");
         return true;
@@ -122,8 +123,9 @@
      * fix menu click
      */
     $(".main > .main-left > .nav > .slide > .slide-menu > li").click(function () {
-        if (lastNode != undefined)
+        if (lastNode !== null) {
             lastNode.removeClass("active");
+        }
         $(this).addClass("active");
         $(".main > .loading").fadeIn("fast");
         window.location = $($(this).find("a")[0]).attr("href");
@@ -144,11 +146,11 @@
      */
     if (getCurrentNodeByUrl()) {
         mainNodeName = "node-" + luciLocation[0] + "-" + luciLocation[1];
-        mainNodeName = mainNodeName.replace(/[ \t\n\r\/]+/g, "_").toLowerCase();
+        mainNodeName = mainNodeName.replace(/[ \t\n\r/]+/g, "_").toLowerCase();
         $("body").addClass(mainNodeName);
     }
 
-    if (mainNodeName != undefined) {
+    if (mainNodeName !== null) {
         switch (mainNodeName) {
             case "node-status-system_log":
             case "node-status-kernel_log":
@@ -158,13 +160,16 @@
                     $(".main-right").blur();
                 });
                 break;
-            case "node-status-firewall":
-                var button = $(".node-status-firewall > .main fieldset li > a");
+            case "node-status-firewall": {
+                const button = $(".node-status-firewall > .main fieldset li > a");
                 button.addClass("cbi-button cbi-button-reset a-to-btn");
                 break;
-            case "node-system-reboot":
-                var button = $(".node-system-reboot > .main > .main-right p > a");
+            }
+            case "node-system-reboot": {
+                const button = $(".node-system-reboot > .main > .main-right p > a");
                 button.addClass("cbi-button cbi-input-reset a-to-btn");
                 break;
+            }
         }
     }
+})(jQuery);

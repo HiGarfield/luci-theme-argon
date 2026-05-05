@@ -27,7 +27,7 @@
 	local http = require "luci.http"
 	local disp = require "luci.dispatcher"
 
-    local boardinfo = util.ubus("system", "board")
+	local boardinfo = util.ubus("system", "board")
 	
 	local request  = disp.context.path
 	local request2 = disp.context.request

@@ -49,15 +49,15 @@
      * hook other "A Label" and add hash to it.
      */
     $("#maincontent > .container").find("a").each(function () {
-        var that = $(this);
-        var onclick = that.attr("onclick");
-        if (onclick == undefined || onclick == "") {
+        const that = $(this);
+        const onclick = that.attr("onclick");
+        if (onclick === undefined || onclick === "") {
             that.click(function () {
-                var href = that.attr("href");
-                var normalizedHref = typeof href === "string" ? href.trim() : "";
-                var compactHref = normalizedHref.replace(/\s+/g, "");
-                var schemeMatch = compactHref.match(/^([a-z][a-z0-9+.-]*):/i);
-                var scheme = schemeMatch ? schemeMatch[1].toLowerCase() : "";
+                const href = that.attr("href");
+                const normalizedHref = typeof href === "string" ? href.trim() : "";
+                const compactHref = normalizedHref.replace(/\s+/g, "");
+                const schemeMatch = compactHref.match(/^([a-z][a-z0-9+.-]*):/i);
+                const scheme = schemeMatch ? schemeMatch[1].toLowerCase() : "";
                 if (compactHref !== "" &&
                     compactHref.indexOf("#") === -1 &&
                     scheme !== "javascript" &&
@@ -76,13 +76,13 @@
      * fix legend position
      */
     $("legend").each(function () {
-        var that = $(this);
+        const that = $(this);
         that.after("<span class='panel-title'>" + that.text() + "</span>");
     });
 
     $(".cbi-section-table-titles, .cbi-section-table-descr, .cbi-section-descr").each(function () {
-        var that = $(this);
-        if (that.text().trim() == "") {
+        const that = $(this);
+        if (that.text().trim() === "") {
             that.css("padding", "0px");
         }
     });
