@@ -19,7 +19,7 @@
  *      https://github.com/LuttyYang/luci-theme-material/
  *
  *  Argon Theme
- *	    https://demos.creative-tim.com/argon-dashboard/index.html
+ *      https://demos.creative-tim.com/argon-dashboard/index.html
  *
  *  Login background
  *      https://unsplash.com/
@@ -27,10 +27,11 @@
  *  Licensed to the public under the Apache License 2.0
  */
 
+(function ($) {
     /**
      * Sidebar expand
      */
-    var showSide = false;
+    let showSide = false;
     $(".showSide").click(function () {
         if (showSide) {
             $(".darkMask").stop(true).fadeOut("fast");
@@ -62,3 +63,4 @@
             showSide = false;
         }
     });
+})(jQuery);
