@@ -183,9 +183,6 @@
 	end
 	
 	math.randomseed(os.time())
-
-	local bar_color = '#5e72e4'
-	
 -%>
 <!DOCTYPE html>
 <html lang="<%=luci.i18n.context.lang%>">
@@ -204,16 +201,16 @@
 	<meta name="x5-page-mode" content="app">
 	<meta name="browsermode" content="application">
 	<meta name="msapplication-tap-highlight" content="no">
-	<meta name="msapplication-TileColor" content="<%=bar_color%>">
+	<meta name="msapplication-TileColor" content="#5e72e4">
 
 	<meta name="application-name" content="<%=striptags( (boardinfo.hostname or "?") ) %> - LuCI">
 	<meta name="apple-mobile-web-app-title" content="<%=striptags( (boardinfo.hostname or "?") ) %> - LuCI">
 	<link rel="apple-touch-icon" sizes="144x144" href="<%=media%>/icon/icon.png">
 	<link rel="icon" type="image/png" sizes="144x144" href="<%=media%>/icon/icon.png">
 	<link rel="manifest" href="<%=media%>/icon/manifest.json"  crossorigin="use-credentials">
-	<meta name="msapplication-TileColor" content="<%=bar_color%>">
+	<meta name="msapplication-TileColor" content="#5e72e4">
 	<meta name="msapplication-TileImage" content="<%=media%>/icon/icon.png">
-	<meta name="theme-color" content="<%=bar_color%>">
+	<meta name="theme-color" content="#5e72e4">
 	<link rel="stylesheet" href="<%=media%>/css/cascade.css<%# ?v=PKG_VERSION %>">
 	<link rel="shortcut icon" href="<%=media%>/favicon.ico">
 	<% if node and node.css then %>
