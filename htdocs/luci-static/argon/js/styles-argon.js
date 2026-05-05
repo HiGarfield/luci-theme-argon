@@ -82,7 +82,7 @@
 
     $(".cbi-section-table-titles, .cbi-section-table-descr, .cbi-section-descr").each(function () {
         const that = $(this);
-        if (that.text().trim() == "") {
+        if (that.text().trim() === "") {
             that.css("padding", "0px");
         }
     });
