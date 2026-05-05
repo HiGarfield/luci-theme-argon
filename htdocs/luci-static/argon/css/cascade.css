@@ -67,7 +67,7 @@
   --success: #2dce89;
   --info: #11cdef;
   --danger: #f5365c;
-  --light: #adb5bd;
+  --gray-light: #adb5bd;
   --dark: #212529;
   --neutral: #fff;
   --login-form-bg-color: rgba(244, 245, 247, 0.8);
@@ -387,7 +387,7 @@ li {
   letter-spacing: 0.8rem;
 }
 .login-page .login-container .login-form .cbi-button-apply:hover,
-.login-page .login-container .login-form .cbi-button-apply :focus {
+.login-page .login-container .login-form .cbi-button-apply:focus {
   opacity: 0.9;
 }
 .login-page .login-container footer {
@@ -441,7 +441,7 @@ header {
   position: relative;
 }
 header .container {
-  margin-top: rem;
+  margin-top: 0;
   padding: 0.5rem 1rem 0 1rem;
 }
 header .container .pull-right > * {
@@ -596,7 +596,7 @@ footer a {
 .main .main-left .nav li.slide ul li a::after {
   content: "";
   position: absolute;
-  width: 00%;
+  width: 0%;
   height: 2px;
   left: 0;
   bottom: 0;
@@ -746,7 +746,7 @@ footer a {
 .main .main-left .nav li.slide .slide-menu li a::after {
   content: "";
   position: absolute;
-  width: 00%;
+  width: 0%;
   height: 2px;
   left: 0;
   bottom: 0;
@@ -1894,10 +1894,6 @@ div > table > tbody > tr:nth-of-type(2n),
 div > .table > .tbody > .tr:nth-of-type(2n) {
   background-color: #f9f9f9;
 }
-div > table > tbody > tr:nth-of-type(2n),
-div > .table > .tbody > .tr:nth-of-type(2n) {
-  background-color: #f9f9f9;
-}
 .danger {
   background-color: #f5365c !important;
   background-color: var(--danger) !important;
@@ -2375,7 +2371,7 @@ div::-webkit-scrollbar {
   transition: all 0.15s ease-in-out;
   line-height: 1.5;
   height: calc(2.75rem + 2px);
-  padding: 0m;
+  padding: 0;
   color: #8898aa;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
