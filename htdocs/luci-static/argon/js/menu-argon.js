@@ -38,9 +38,9 @@
             luciLocation = node;
         }
 
-        for (var i in luciLocation) {
+        for (var i = 0; i < luciLocation.length; i++) {
             nodeUrl += luciLocation[i];
-            if (i != luciLocation.length - 1) {
+            if (i !== luciLocation.length - 1) {
                 nodeUrl += "/";
             }
         }
