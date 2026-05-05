@@ -3270,6 +3270,7 @@ div.commandbox {
     height: auto;
   }
 }
+/* Hide footer when viewport height is too small (matches JS threshold of 660px) */
 @media screen and (max-height: 659px) {
   .ftc {
     display: none;
