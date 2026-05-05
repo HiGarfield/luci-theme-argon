@@ -1,0 +1,16 @@
+{
+    "name": "LuCI",
+    "short_name": "LuCI",
+    "description": "OpenWrt LuCI Web Interface",
+    "start_url": "/cgi-bin/luci/",
+    "display": "standalone",
+    "background_color": "#5e72e4",
+    "theme_color": "#5e72e4",
+    "icons": [
+        {
+            "src": "/luci-static/argon/img/argon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}

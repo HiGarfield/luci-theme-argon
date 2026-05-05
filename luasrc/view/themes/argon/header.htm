@@ -207,6 +207,8 @@
 	<meta name="apple-mobile-web-app-title" content="<%=striptags( (boardinfo.hostname or "?") ) %> - LuCI">
 	<link rel="apple-touch-icon" sizes="any" href="<%=media%>/img/argon.svg">
 	<link rel="icon" type="image/svg+xml" sizes="any" href="<%=media%>/img/argon.svg">
+	<link rel="manifest" href="<%=media%>/manifest.json" crossorigin="use-credentials">
+	<meta name="msapplication-TileColor" content="#5e72e4">
 	<meta name="msapplication-TileImage" content="<%=media%>/img/argon.svg">
 	<meta name="theme-color" content="#5e72e4">
 	<link rel="stylesheet" href="<%=media%>/css/cascade.css<%# ?v=PKG_VERSION %>">
@@ -221,6 +223,7 @@
 	<script src="<%=resource%>/xhr.js<%# ?v=PKG_VERSION %>"></script>
 	<script src="<%=media%>/js/jquery.min.js?v=3.5.1"></script>
 	<script src="<%=media%>/js/color_calc-argon.js<%# ?v=PKG_VERSION %>"></script>
+	<script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js'); }</script>
 </head>
 
 <body
