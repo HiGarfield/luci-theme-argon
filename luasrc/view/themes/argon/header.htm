@@ -243,11 +243,11 @@
 						<a class="brand" href="#"><%=boardinfo.hostname or "?"%></a>
 						<div class="pull-right">
 							<% render_changes() %>
-							<span id="xhr_poll_status" style="display:none"
+							<span id="xhr_poll_status"
 								onclick="XHR.running() ? XHR.halt() : XHR.run()">
 								<span class="label success" id="xhr_poll_status_on"><span
 										class="mobile-hide"><%:Auto Refresh%></span> <%:on%></span>
-								<span class="label" id="xhr_poll_status_off" style="display:none"><span
+								<span class="label" id="xhr_poll_status_off"><span
 										class="mobile-hide"><%:Auto Refresh%></span> <%:off%></span>
 							</span>
 						</div>

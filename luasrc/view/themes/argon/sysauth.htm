@@ -109,7 +109,10 @@
 	<!-- Video Player End -->
 	<% else %>
 	<!-- Image Background Start -->
-	<div class="main-bg" id="main-bg"<% if bgUrl ~= "" then %> style="background-image:url(<%=bgUrl%>)"<% end %>></div>
+	<div class="main-bg" id="main-bg"></div>
+	<% if bgUrl ~= "" then %>
+	<script>document.getElementById("main-bg").style.backgroundImage = "url(<%=bgUrl%>)";</script>
+	<% end %>
 	<!-- Image Background End -->
 	<% end %>
 	<!-- Login Container Start -->
