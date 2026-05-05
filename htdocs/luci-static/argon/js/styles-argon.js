@@ -55,13 +55,14 @@
             that.click(function () {
                 var href = that.attr("href");
                 var normalizedHref = typeof href === "string" ? href.trim().toLowerCase() : "";
-                if (normalizedHref !== "" &&
-                    normalizedHref.indexOf("#") !== 0 &&
-                    normalizedHref.indexOf("javascript:") !== 0 &&
-                    normalizedHref.indexOf("vbscript:") !== 0 &&
-                    normalizedHref.indexOf("data:") !== 0 &&
-                    normalizedHref.indexOf("mailto:") !== 0 &&
-                    normalizedHref.indexOf("tel:") !== 0) {
+                var compactHref = normalizedHref.replace(/\s+/g, "");
+                if (compactHref !== "" &&
+                    compactHref.indexOf("#") === -1 &&
+                    compactHref.indexOf("javascript:") !== 0 &&
+                    compactHref.indexOf("vbscript:") !== 0 &&
+                    compactHref.indexOf("data:") !== 0 &&
+                    compactHref.indexOf("mailto:") !== 0 &&
+                    compactHref.indexOf("tel:") !== 0) {
                     $(".main > .loading").fadeIn("fast");
                     return true;
                 }
