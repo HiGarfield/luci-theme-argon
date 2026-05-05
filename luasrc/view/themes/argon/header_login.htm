@@ -27,10 +27,7 @@
 	local http = require "luci.http"
 	local disp = require "luci.dispatcher"
 
-    local fs	= require "nixio.fs"
-	local nutil = require "nixio.util"
-	local uci = require 'luci.model.uci'.cursor()
-	local boardinfo = util.ubus("system", "board")
+    local boardinfo = util.ubus("system", "board")
 	
 	local request  = disp.context.path
 	local request2 = disp.context.request
@@ -50,15 +47,7 @@
 	
 	math.randomseed(tonumber(tostring(os.time()):reverse():sub(1, 9)))
 
-	-- Custom settings
 	local bar_color = '#5e72e4'
-	local primary, blur_radius, blur_opacity
-	if fs.access('/etc/config/argon') then
-		primary = uci:get_first('argon', 'global', 'primary')
-		blur_radius = uci:get_first('argon', 'global', 'blur')
-		blur_opacity = uci:get_first('argon', 'global', 'transparency')
-		bar_color = primary
-	end
 -%>
 <!DOCTYPE html>
 <html lang="<%=luci.i18n.context.lang%>">
@@ -87,15 +76,6 @@
     <meta name="msapplication-TileImage" content="<%=media%>/icon/icon.png">
     <meta name="theme-color" content="<%=bar_color%>">
     <link rel="stylesheet" href="<%=media%>/css/cascade.css<%# ?v=PKG_VERSION %>">
-    <% if fs.access('/etc/config/argon') then %>
-    <style title="text/css">
-    :root {
-        --primary: <%=primary%>;
-        --blur-radius:<%=blur_radius%>px;
-        --blur-opacity:<%=blur_opacity%>;
-    }
-    </style>
-    <% end -%>
     <link rel="shortcut icon" href="<%=media%>/favicon.ico">
     <% if node and node.css then %>
     <link rel="stylesheet" href="<%=resource%>/<%=node.css%>">
