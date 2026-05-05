@@ -32,15 +32,17 @@
 
     var nodeUrl = "";
     (function (node) {
+        var pathNodes = [];
         if (node[0] == "admin") {
-            luciLocation = [node[1], node[2]];
+            pathNodes = [node[1], node[2]];
         } else {
-            luciLocation = node;
+            pathNodes = Array.isArray(node) ? node : [];
         }
+        luciLocation = pathNodes;
 
-        for (var i = 0; i < luciLocation.length; i++) {
-            nodeUrl += luciLocation[i];
-            if (i !== luciLocation.length - 1) {
+        for (var i = 0; i < pathNodes.length; i++) {
+            nodeUrl += pathNodes[i];
+            if (i !== pathNodes.length - 1) {
                 nodeUrl += "/";
             }
         }
