@@ -46,7 +46,7 @@
 		local backgroundTable = {}
 		local backgroundCount = 0
 		for i, f in ipairs(glob(path)) do
-			attr = fs.stat(f)
+			local attr = fs.stat(f)
 			if attr then
 				local ext = fs.basename(f):match(".+%.(%w+)$")
 				if ext ~= nil then

@@ -52,7 +52,8 @@
      */
     function getCurrentNodeByUrl() {
         var ret = false;
-        const urlReg = new RegExp(nodeUrl + "$")
+        const escapedNodeUrl = nodeUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const urlReg = new RegExp(escapedNodeUrl + "$");
         if (!$('body').hasClass('logged-in')) {
             luciLocation = ["Main", "Login"];
             return true;

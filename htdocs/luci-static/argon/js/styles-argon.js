@@ -54,7 +54,12 @@
         if (onclick == undefined || onclick == "") {
             that.click(function () {
                 var href = that.attr("href");
-                if (href.indexOf("#") == -1) {
+                if (typeof href === "string" &&
+                    href !== "" &&
+                    href.indexOf("#") !== 0 &&
+                    href.indexOf("javascript:") !== 0 &&
+                    href.indexOf("mailto:") !== 0 &&
+                    href.indexOf("tel:") !== 0) {
                     $(".main > .loading").fadeIn("fast");
                     return true;
                 }
